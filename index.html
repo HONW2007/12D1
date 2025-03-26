@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunrise Memories - Class 12D1</title>
+    <title>Class 12D1</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -140,7 +140,7 @@
         <div class="reed"></div><div class="reed reed-1"></div></div>
         <div class="header"><h1>Chào Mừng Đến Với Kỷ Niệm Lớp 12D1</h1></div>
         <div class="footer-text"><p>Tất cả được quyền bảo lưu. Niên khóa 2022-2025</p></div>
-        <div class="buttons"><a href="index.html" class="btn">Trang Chủ</a><a href="hoatdong.html" class="btn">Hoạt Động</a><a href="thanhvien.html" class="btn">Thành Viên</a></div>
+        <div class="buttons"><a href="https://sites.google.com/view/banquyenlop12d1/trang-ch%E1%BB%A7" class="btn">Trang Chủ</a><a href="hoatdong.html" class="btn">Hoạt Động</a><a href="thanhvien.html" class="btn">Thành Viên</a></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -161,7 +161,7 @@
         composer.addPass(renderScene);
         composer.addPass(bloomPass);
     
-        // Stars
+        
         const starGeometry = new THREE.BufferGeometry();
         const starCount = 10000;
         const posArray = new Float32Array(starCount * 3);
@@ -181,13 +181,13 @@
         const stars = new THREE.Points(starGeometry, starMaterial);
         scene.add(stars);
     
-        // Nebula
+    
         const nebulaGeometry = new THREE.SphereGeometry(250, 64, 64);
         const nebulaMaterial = new THREE.MeshBasicMaterial({ color: 0xff4757, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, side: THREE.DoubleSide });
         const nebula = new THREE.Mesh(nebulaGeometry, nebulaMaterial);
         scene.add(nebula);
     
-        // Rain
+
         const rainGeometry = new THREE.BufferGeometry();
         const rainCount = 2000;
         const rainPos = new Float32Array(rainCount * 3);
@@ -201,7 +201,7 @@
         const rain = new THREE.Points(rainGeometry, rainMaterial);
         scene.add(rain);
     
-        // Water with Enhanced Waves, Caustics, and Fog
+
         const waterGeometry = new THREE.PlaneGeometry(1000, 1000);
         const waterShader = {
             uniforms: {
@@ -270,7 +270,7 @@
         water.position.y = -50;
         scene.add(water);
     
-        // Water Fog
+        
         const fogGeometry = new THREE.PlaneGeometry(1000, 1000);
         const fogMaterial = new THREE.ShaderMaterial({
             uniforms: {
@@ -302,22 +302,22 @@
         });
         const waterFog = new THREE.Mesh(fogGeometry, fogMaterial);
         waterFog.rotation.x = -Math.PI / 2;
-        waterFog.position.y = -45; // Ngay trên mặt nước
+        waterFog.position.y = -45; 
         scene.add(waterFog);
     
-        // Sun Light
+        
         const sunLight = new THREE.PointLight(0xffffff, 1, 500);
         sunLight.position.set(0, 50, 50);
         scene.add(sunLight);
     
-        // Halo
+
         const haloGeometry = new THREE.RingGeometry(25, 30, 32);
         const haloMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending });
         const halo = new THREE.Mesh(haloGeometry, haloMaterial);
         halo.position.set(0, 0, 10);
         scene.add(halo);
     
-        // Birds
+        
         const birdGeometry = new THREE.BufferGeometry();
         const birdVertices = new Float32Array([-1, 0, 0, 0, 1, 0, 1, 0, 0]);
         birdGeometry.setAttribute('position', new THREE.BufferAttribute(birdVertices, 3));
@@ -329,8 +329,8 @@
             scene.add(bird);
             birds.push(bird);
         }
-    
-        // Dust
+
+        
         const dustGeometry = new THREE.BufferGeometry();
         const dustCount = 500;
         const dustPos = new Float32Array(dustCount * 3);
@@ -343,11 +343,11 @@
         const dustMaterial = new THREE.PointsMaterial({ size: 0.3, color: 0xaaaaaa, transparent: true, opacity: 0.4 });
         const dust = new THREE.Points(dustGeometry, dustMaterial);
         scene.add(dust);
+
     
-        // Fog
         scene.fog = new THREE.Fog(0x1a1a3d, 50, 300);
     
-        // Volumetric Cloud
+        
         const cloudPlaneGeometry = new THREE.PlaneGeometry(500, 500);
         const cloudShader = {
             uniforms: {
@@ -381,7 +381,7 @@
         cloudPlane.position.set(0, 100, 0);
         scene.add(cloudPlane);
     
-        // Rainbow with Enhanced Clarity
+        
         const rainbowGeometry = new THREE.TorusGeometry(100, 5, 16, 100);
         const rainbowShader = {
             uniforms: { time: { value: 0.0 } },
@@ -416,7 +416,7 @@
         rainbow.rotation.x = Math.PI / 2;
         scene.add(rainbow);
     
-        // Dragonflies with Enhanced Detail
+        
         const dragonflyGeometry = new THREE.PlaneGeometry(5, 5);
         const dragonflyMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 0.9, side: THREE.DoubleSide });
         const dragonflyCount = 20;
@@ -430,7 +430,7 @@
         }
         scene.add(dragonflies);
     
-        // Falling Leaves
+    
         const leafGeometry = new THREE.PlaneGeometry(2, 2);
         const leafMaterial = new THREE.MeshBasicMaterial({ color: 0xffd700, transparent: true, opacity: 0.7, side: THREE.DoubleSide });
         const leafCount = 50;
@@ -445,12 +445,12 @@
         }
         scene.add(leaves);
     
-        // Reflection
+        
         const reflectionCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderTarget = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight);
         waterMaterial.uniforms.reflectionTexture = { value: renderTarget.texture };
     
-        // Day-Night
+    
         let timeOfDay = 0;
         const toggleButton = document.createElement('button');
         toggleButton.textContent = 'Toggle Day/Night';
@@ -469,7 +469,7 @@
             const delta = clock.getDelta();
             const elapsedTime = clock.getElapsedTime();
     
-            // Update stars
+    
             const starPos = stars.geometry.attributes.position.array;
             for (let i = 0; i < starCount; i++) {
                 starPos[i * 3 + 2] += velocities[i];
@@ -477,7 +477,7 @@
             }
             stars.geometry.attributes.position.needsUpdate = true;
     
-            // Update rain
+            
             const rainPos = rain.geometry.attributes.position.array;
             for (let i = 0; i < rainCount; i++) {
                 rainPos[i * 3 + 1] -= 0.5;
@@ -485,33 +485,33 @@
             }
             rain.geometry.attributes.position.needsUpdate = true;
     
-            // Update nebula
+            
             nebula.rotation.y += 0.006;
             nebula.rotation.x += 0.003;
     
-            // Update water
+            
             waterMaterial.uniforms.time.value = elapsedTime;
             waterMaterial.uniforms.rippleTime.value += delta;
     
-            // Update water fog
+            
             fogMaterial.uniforms.time.value = elapsedTime;
     
-            // Update light
+            
             sunLight.position.y = 50 * Math.sin(elapsedTime);
             sunLight.position.x = 50 * Math.cos(elapsedTime);
     
-            // Update halo
+            
             halo.scale.set(1 + Math.sin(elapsedTime) * 0.1, 1 + Math.sin(elapsedTime) * 0.1, 1);
             halo.rotation.z += 0.01;
     
-            // Update birds
+            
             birds.forEach(bird => {
                 bird.position.x += 0.5;
                 bird.position.y += Math.sin(bird.position.x * 0.1) * 0.2;
                 if (bird.position.x > 200) bird.position.x = -200;
             });
     
-            // Update dust
+            
             const dustPos = dust.geometry.attributes.position.array;
             for (let i = 0; i < dustCount; i++) {
                 dustPos[i * 3] += Math.sin(elapsedTime + i) * 0.02;
@@ -519,14 +519,14 @@
             }
             dust.geometry.attributes.position.needsUpdate = true;
     
-            // Update clouds
+            
             cloudShader.uniforms.time.value = elapsedTime;
             cloudShader.uniforms.lightPosition.value.copy(sunLight.position);
     
-            // Update rainbow
+        
             rainbowShader.uniforms.time.value = elapsedTime;
     
-            // Update dragonflies
+            
             for (let i = 0; i < dragonflyCount; i++) {
                 dragonflies.getMatrixAt(i, dummy.matrix);
                 dummy.matrix.decompose(dummy.position, dummy.quaternion, dummy.scale);
@@ -538,7 +538,7 @@
             }
             dragonflies.instanceMatrix.needsUpdate = true;
     
-            // Update falling leaves
+         
             for (let i = 0; i < leafCount; i++) {
                 leaves.getMatrixAt(i, dummy.matrix);
                 dummy.matrix.decompose(dummy.position, dummy.quaternion, dummy.scale);
@@ -551,7 +551,7 @@
             }
             leaves.instanceMatrix.needsUpdate = true;
     
-            // Update reflection
+            
             reflectionCamera.position.copy(camera.position);
             reflectionCamera.position.y *= -1;
             reflectionCamera.lookAt(0, -50, 0);
@@ -559,7 +559,7 @@
             renderer.render(scene, reflectionCamera);
             renderer.setRenderTarget(null);
     
-            // Update day-night
+           
             const t = timeOfDay;
             sunLight.color.setRGB(1, 1 - t * 0.5, 1 - t);
             nebulaMaterial.color.setRGB(1 - t, 0.3, 0.5 + t * 0.5);
@@ -569,7 +569,7 @@
         }
         animate();
     
-        // Mouse interaction
+
         window.addEventListener('mousemove', (event) => {
             const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
             const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -577,7 +577,7 @@
             camera.position.y = mouseY * 10;
         });
     
-        // Ripple on click
+        
         window.addEventListener('click', (event) => {
             const mouseX = event.clientX / window.innerWidth;
             const mouseY = 1.0 - event.clientY / window.innerHeight;
